@@ -6,10 +6,10 @@
 - `privacy.html`, `terms.html`, `accessibility.html`: פרטיות, תנאי שימוש והצהרת נגישות
 - `styles.css`, `script.js`, `favicon.svg`
 - `fonts/`: Suez One ו-Assistant (רישיון SIL OFL ב-`fonts/OFL.txt`), מאוחסנים באתר
-- `_headers`: כותרות אבטחה ל-Netlify, ומטמון ארוך לגופנים
+- `_headers`: כותרות אבטחה (Cloudflare Pages קורא את הקובץ הזה), ומטמון ארוך לגופנים
 
 **בלי צד שלישי:** ה-CSP ב-`_headers` מאפשר לטעון קבצים רק מהאתר עצמו.
 
 **הדגמת אוטומציה:** אחרי שליחת הטופס מוצג מה היה קורה בסטודיו אמיתי (אישור בוואטסאפ, יומן, תזכורת, הודעת המשך). שום דבר לא נשלח.
 
-HTML, CSS ו-JavaScript קטן, בלי בנייה ובלי ספריות. מתאים להעלאה ישירה ל-Netlify.
+HTML, CSS ו-JavaScript קטן, בלי בנייה ובלי ספריות. מתארח ב-Cloudflare Pages: בלי פקודת בנייה, תיקיית הפלט היא שורש המאגר. Web Analytics צריך להישאר כבוי, כי הוא מזריק סקריפט חיצוני שה-CSP חוסם.
