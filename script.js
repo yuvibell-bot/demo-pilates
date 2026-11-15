@@ -1,4 +1,4 @@
-// אתר דוגמה: שום דבר לא נשלח לשרת, ושום דבר לא נשמר בדפדפן.
+// אתר דוגמה: שום דבר לא נשלח לשרת. הדבר היחיד שנשמר בדפדפן הוא הבחירה בכפתור עצירת התנועה (webit.js).
 const root = document.documentElement;
 root.classList.add('js');
 
@@ -86,33 +86,4 @@ document.getElementById('flow-reset').addEventListener('click', () => {
   form.elements.slot.focus();
 });
 
-// ===== תנועה =====
-// כבויה מראש למי שביקש "הפחתת תנועה" במכשיר, ואפשר לעצור אותה בכפתור.
-const reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-const toggle = document.getElementById('motion-toggle');
-const toggleLabel = toggle.querySelector('.motion-label');
-
-function setMotion(on) {
-  root.classList.toggle('motion-off', !on);
-  toggle.setAttribute('aria-pressed', String(!on));
-  toggleLabel.textContent = on ? 'עצירת תנועה' : 'הפעלת תנועה';
-}
-toggle.hidden = false;
-toggle.addEventListener('click', () => setMotion(root.classList.contains('motion-off')));
-reduceQuery.addEventListener('change', (e) => setMotion(!e.matches));
-setMotion(!reduceQuery.matches);
-
-// חלקים נכנסים בדהייה איטית. מה שכבר על המסך בטעינה מוצג מיד.
-const revealItems = [...document.querySelectorAll('[data-reveal]')];
-revealItems.forEach((el) => {
-  if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-in');
-});
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
-    });
-  }, { rootMargin: '0px 0px -10% 0px' });
-  revealItems.forEach((el) => { if (!el.classList.contains('is-in')) io.observe(el); });
-  root.classList.add('reveal-ready');
-}
+// התנועה, הכניסה בגלילה, החוט והסצנה מגיעים מ-webit.js (מערכת העיצוב).

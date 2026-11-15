@@ -1,46 +1,59 @@
 <!doctype html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" class="theme-light">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>ציר – סטודיו לפילאטיס | פרויקט קונספט</title>
   <meta name="description" content="אתר דוגמה לסטודיו פילאטיס: שיעורי מכשירים ומזרן בקבוצות קטנות, לוח שיעורים שבועי ותיאום שיעור ניסיון. פרויקט קונספט, העסק בדוי.">
+  <meta name="theme-color" content="#EEF1EC">
   <link rel="preload" href="fonts/suez-one-hebrew-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/assistant-hebrew-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="webit.css">
+  <link rel="stylesheet" href="site.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#EEF1EC">
+  <script src="webit.js" defer></script>
+  <script src="webit-fx.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">דילוג לתוכן</a>
+  <aside aria-label="הערה על האתר"><p class="concept-note">פרויקט קונספט: אתר דוגמה שבנה יובל. הסטודיו, השם ולוח השיעורים בדויים.</p></aside>
 
   <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top">ציר<span class="brand-sub">סטודיו לפילאטיס</span></a>
+    <div class="wrap">
+      <a class="logo" href="#top">ציר <small>סטודיו לפילאטיס</small></a>
       <nav class="nav" aria-label="ניווט ראשי">
         <a href="#classes">השיעורים</a>
         <a href="#schedule">לוח שבועי</a>
         <a href="#first">השיעור הראשון</a>
         <a href="#faq">שאלות</a>
       </nav>
-      <a class="btn btn-small" href="#book">לשיעור ניסיון</a>
+      <div class="header-actions">
+        <a class="header-link" href="accessibility.html"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3.5 6m3.5-6l3.5 6"/></svg><span>נגישות</span></a>
+        <a class="btn btn--primary" href="#book">לשיעור ניסיון</a>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">פילאטיס מכשירים ומזרן · השרון</p>
-          <h1>תנועה מדויקת,<br>בקצב שלך</h1>
-          <p class="lead">שיעורים בקבוצות קטנות, עם צוות שמכיר כל משתתף בשמו. מתחילים בשיעור ניסיון, ואז מחליטים.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#book">לתיאום שיעור ניסיון</a>
+    <!-- 1. פתיח: מה זה, ופעולה אחת -->
+    <section class="hero intro fx-host" id="top" data-cta-hide>
+      <canvas class="fx-layer fx-calm" data-fx="dust"></canvas>
+      <div class="wrap grid">
+        <div class="col-7">
+          <p class="eyebrow" data-intro><b>01</b> פילאטיס מכשירים ומזרן · השרון</p>
+          <h1 class="t-hero hl">
+            <span class="line">תנועה מדויקת,</span>
+            <span class="line i1"><em>בקצב שלך</em></span>
+          </h1>
+          <p class="t-lead i1" data-intro>שיעורים בקבוצות קטנות, עם צוות שמכיר כל משתתף בשמו. מתחילים בשיעור ניסיון, ואז מחליטים.</p>
+          <div class="hero__actions i2" data-intro>
+            <a class="btn btn--primary btn--lg" href="#book">לתיאום שיעור ניסיון</a>
             <a class="link-arrow" href="#schedule">ללוח השיעורים</a>
           </div>
-          <p class="concept-note">פרויקט קונספט: אתר דוגמה שבנה יובל. הסטודיו בדוי.</p>
+          <p class="hero__trust i3" data-intro><span>קבוצות קטנות</span><span>אין צורך בניסיון קודם</span><span>שיעור ניסיון לפני שמחליטים</span></p>
         </div>
-        <div class="hero-art" aria-hidden="true">
+        <div class="col-5 hero__art" aria-hidden="true">
           <svg viewBox="0 0 400 480" class="spine">
             <circle class="breath" cx="200" cy="240" r="168"/>
             <path class="curve" pathLength="1" d="M214 24 C150 92 262 150 206 214 C152 276 252 326 198 392 C176 420 186 446 196 460"/>
@@ -50,49 +63,60 @@
           </svg>
         </div>
       </div>
-      <button class="motion-toggle" type="button" id="motion-toggle" aria-pressed="false" hidden>
-        <svg class="icon-pause" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg>
-        <svg class="icon-play" aria-hidden="true" width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M13 2v12L3 8z"/></svg>
-        <span class="motion-label">עצירת תנועה</span>
-      </button>
     </section>
 
+    <!-- 2. סצנה נעוצה: הגישה של הסטודיו בשלוש שורות -->
+    <section class="scene" data-scene aria-label="הגישה של הסטודיו">
+      <div class="scene__stage">
+        <canvas class="fx-layer fx-calm" data-fx="helix"></canvas>
+        <div class="wrap--narrow">
+          <p class="statement hl">
+            <span class="line reveal-line n3">מעט <em>אנשים.</em></span>
+            <span class="line reveal-line n3 i1">תנועה <em>מדויקת.</em></span>
+            <span class="line reveal-line n3 i2">תשומת לב <em>לכל אחד.</em></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ההצעה: סוגי השיעורים בשורות רחבות -->
     <section class="section" id="classes" aria-labelledby="classes-title">
-      <div class="wrap split">
-        <div class="split-head" data-reveal>
-          <h2 id="classes-title">השיעורים</h2>
-          <p>שלושה סוגים, ואותה גישה: מעט אנשים, תנועה מדויקת ותשומת לב לכל אחד.</p>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow"><b>02</b> השיעורים</p>
+          <h2 class="t-h2 hl" id="classes-title">שלושה סוגים, <em>גישה אחת</em></h2>
+          <p>מעט אנשים, תנועה מדויקת ותשומת לב לכל אחד.</p>
         </div>
         <ol class="rows">
           <li class="row" data-reveal>
-            <span class="row-num" aria-hidden="true">01</span>
-            <div class="row-body">
+            <span class="row__num" aria-hidden="true">01</span>
+            <div class="row__body">
               <h3>פילאטיס מכשירים</h3>
               <p>עבודה על מכשיר רפורמר, עם קפיצים שמוסיפים התנגדות או עוזרים לתנועה.</p>
             </div>
-            <dl class="row-meta">
+            <dl class="row__meta">
               <div><dt>קבוצה</dt><dd>עד 6 משתתפים <small>(לדוגמה)</small></dd></div>
               <div><dt>רמה</dt><dd>מתחילים ומתקדמים</dd></div>
             </dl>
           </li>
           <li class="row" data-reveal>
-            <span class="row-num" aria-hidden="true">02</span>
-            <div class="row-body">
+            <span class="row__num" aria-hidden="true">02</span>
+            <div class="row__body">
               <h3>פילאטיס מזרן</h3>
               <p>תרגילים על מזרן עם משקל הגוף ועזרים קטנים כמו כדור וגומייה.</p>
             </div>
-            <dl class="row-meta">
+            <dl class="row__meta">
               <div><dt>קבוצה</dt><dd>עד 10 משתתפים <small>(לדוגמה)</small></dd></div>
               <div><dt>רמה</dt><dd>כל הרמות</dd></div>
             </dl>
           </li>
           <li class="row" data-reveal>
-            <span class="row-num" aria-hidden="true">03</span>
-            <div class="row-body">
+            <span class="row__num" aria-hidden="true">03</span>
+            <div class="row__body">
               <h3>שיעור פרטי או זוגי</h3>
               <p>שיעור שבנוי רק סביבך, בשעה שנוחה לך. מתאים גם למי שרוצה להתחיל לאט.</p>
             </div>
-            <dl class="row-meta">
+            <dl class="row__meta">
               <div><dt>קבוצה</dt><dd>1 עד 2 משתתפים</dd></div>
               <div><dt>רמה</dt><dd>לפי הצורך</dd></div>
             </dl>
@@ -101,10 +125,14 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="schedule" aria-labelledby="schedule-title">
+    <!-- 4. לוח השיעורים: הלב של האתר (ORS) -->
+    <section class="section section--alt" id="schedule" aria-labelledby="schedule-title">
       <div class="wrap">
-        <div class="schedule-head" data-reveal>
-          <h2 id="schedule-title">לוח השיעורים השבועי</h2>
+        <div class="section-head section-head--row" data-reveal>
+          <div>
+            <p class="eyebrow"><b>03</b> לוח שבועי</p>
+            <h2 class="t-h2 hl" id="schedule-title">מתי יש <em>שיעור</em></h2>
+          </div>
           <p><span class="tag">לדוגמה</span> בוחרים שיעור, וממשיכים לתיאום שיעור ניסיון.</p>
         </div>
 
@@ -121,61 +149,78 @@
           <div class="day is-active" id="day-1" role="tabpanel" aria-labelledby="tab-1">
             <h3 class="day-name">ראשון</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="ראשון 07:00"><time>07:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתחילים</span></a></li>
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="ראשון 09:30"><time>09:30</time><span class="slot-name">מזרן</span><span class="slot-level">כל הרמות</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="ראשון 19:00"><time>19:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתקדמים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="ראשון 07:00"><time>07:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתחילים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="ראשון 09:30"><time>09:30</time><span class="slot__name">מזרן</span><span class="slot__level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="ראשון 19:00"><time>19:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתקדמים</span></a></li>
             </ul>
           </div>
           <div class="day" id="day-2" role="tabpanel" aria-labelledby="tab-2">
             <h3 class="day-name">שני</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="שני 08:00"><time>08:00</time><span class="slot-name">מזרן</span><span class="slot-level">כל הרמות</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שני 18:00"><time>18:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתחילים</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שני 20:00"><time>20:00</time><span class="slot-name">מכשירים</span><span class="slot-level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="שני 08:00"><time>08:00</time><span class="slot__name">מזרן</span><span class="slot__level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שני 18:00"><time>18:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתחילים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שני 20:00"><time>20:00</time><span class="slot__name">מכשירים</span><span class="slot__level">כל הרמות</span></a></li>
             </ul>
           </div>
           <div class="day" id="day-3" role="tabpanel" aria-labelledby="tab-3">
             <h3 class="day-name">שלישי</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שלישי 07:00"><time>07:00</time><span class="slot-name">מכשירים</span><span class="slot-level">כל הרמות</span></a></li>
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="שלישי 19:30"><time>19:30</time><span class="slot-name">מזרן</span><span class="slot-level">מתחילים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שלישי 07:00"><time>07:00</time><span class="slot__name">מכשירים</span><span class="slot__level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="שלישי 19:30"><time>19:30</time><span class="slot__name">מזרן</span><span class="slot__level">מתחילים</span></a></li>
             </ul>
           </div>
           <div class="day" id="day-4" role="tabpanel" aria-labelledby="tab-4">
             <h3 class="day-name">רביעי</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="רביעי 09:30"><time>09:30</time><span class="slot-name">מזרן</span><span class="slot-level">כל הרמות</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="רביעי 18:00"><time>18:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתקדמים</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="רביעי 20:00"><time>20:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתחילים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="רביעי 09:30"><time>09:30</time><span class="slot__name">מזרן</span><span class="slot__level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="רביעי 18:00"><time>18:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתקדמים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="רביעי 20:00"><time>20:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתחילים</span></a></li>
             </ul>
           </div>
           <div class="day" id="day-5" role="tabpanel" aria-labelledby="tab-5">
             <h3 class="day-name">חמישי</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="חמישי 08:00"><time>08:00</time><span class="slot-name">מכשירים</span><span class="slot-level">מתחילים</span></a></li>
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="חמישי 19:00"><time>19:00</time><span class="slot-name">מזרן</span><span class="slot-level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="חמישי 08:00"><time>08:00</time><span class="slot__name">מכשירים</span><span class="slot__level">מתחילים</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="חמישי 19:00"><time>19:00</time><span class="slot__name">מזרן</span><span class="slot__level">כל הרמות</span></a></li>
             </ul>
           </div>
           <div class="day" id="day-6" role="tabpanel" aria-labelledby="tab-6">
             <h3 class="day-name">שישי</h3>
             <ul class="slots">
-              <li><a class="slot" href="#book" data-class="מזרן" data-when="שישי 08:30"><time>08:30</time><span class="slot-name">מזרן</span><span class="slot-level">כל הרמות</span></a></li>
-              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שישי 10:00"><time>10:00</time><span class="slot-name">מכשירים</span><span class="slot-level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מזרן" data-when="שישי 08:30"><time>08:30</time><span class="slot__name">מזרן</span><span class="slot__level">כל הרמות</span></a></li>
+              <li><a class="slot" href="#book" data-class="מכשירים" data-when="שישי 10:00"><time>10:00</time><span class="slot__name">מכשירים</span><span class="slot__level">כל הרמות</span></a></li>
             </ul>
           </div>
         </div>
-        <p class="note">שיעור פרטי או זוגי נקבע בתיאום, בשעה שנוחה לך.</p>
+        <div class="schedule-cta">
+          <a class="btn btn--primary" href="#book">לתיאום שיעור ניסיון</a>
+          <p class="t-muted">שיעור פרטי או זוגי נקבע בתיאום, בשעה שנוחה לך.</p>
+        </div>
       </div>
     </section>
 
+    <!-- 5. השיטה: השיעור הראשון, על החוט -->
     <section class="section" id="first" aria-labelledby="first-title">
-      <div class="wrap split">
-        <div class="split-head" data-reveal>
-          <h2 id="first-title">השיעור הראשון</h2>
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow"><b>04</b> השיעור הראשון</p>
+          <h2 class="t-h2 hl" id="first-title">מה קורה <em>בשיעור הראשון</em></h2>
           <p>אין צורך בניסיון קודם. זה מה שכדאי לדעת לפני שמגיעים.</p>
         </div>
-        <div class="first-grid">
-          <div data-reveal>
+        <div class="first">
+          <div class="thread" data-progress>
+            <svg class="thread__svg" viewBox="0 0 44 1000" preserveAspectRatio="none" aria-hidden="true">
+              <path class="thread__base" d="M26 0 C 6 140, 40 260, 22 380 C 6 500, 40 620, 20 760 C 12 860, 24 940, 22 1000"/>
+              <path class="thread__draw" pathLength="1" d="M26 0 C 6 140, 40 260, 22 380 C 6 500, 40 620, 20 760 C 12 860, 24 940, 22 1000"/>
+            </svg>
+            <ol class="steps thread__body">
+              <li class="step" data-reveal><span class="step__num">01</span><h3>בוחרים שיעור</h3><p>לוחצים על שיעור בלוח, והוא נכנס לטופס. אפשר גם להשאיר את הבחירה לשיחה.</p></li>
+              <li class="step" data-reveal><span class="step__num">02</span><h3>מתאמים שיעור ניסיון</h3><p>בוואטסאפ, או משאירים שם וטלפון ומחכים שיחזרו אליכם.</p></li>
+              <li class="step" data-reveal><span class="step__num">03</span><h3>מגיעים 10 דקות לפני</h3><p>להכיר את המקום ואת המכשירים, ולספר לצוות על פציעות או רגישויות כדי להתאים את התרגילים.</p></li>
+              <li class="step" data-reveal><span class="step__num">04</span><h3>השיעור</h3><p>נמשך כ-50 דקות <small>(לדוגמה)</small>. בשיעור מסבירים כל תרגיל ומתאימים אותו לרמה שלך.</p></li>
+            </ol>
+          </div>
+          <div class="bring" data-reveal>
             <h3>מה להביא</h3>
             <ul class="ticks">
               <li>בגדים נוחים שאפשר לזוז בהם</li>
@@ -183,33 +228,51 @@
               <li>בקבוק מים</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. מהסטודיו: שלישיית 9:16, עד שיהיו סרטונים אמיתיים -->
+    <section class="section section--alt" aria-labelledby="studio-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow"><b>05</b> מהסטודיו</p>
+          <h2 class="t-h2 hl" id="studio-title">ככה נראה <em>שיעור</em></h2>
+        </div>
+        <div class="trio" data-reveal tabindex="0" role="region" aria-label="סרטונים מהסטודיו, אפשר לגלול הצידה">
+          <figure class="media-card"><div class="media-card__frame"><span class="media-card__num">01</span><div class="media-card__placeholder">כאן ייכנס סרטון קצר אמיתי מהסטודיו (9:16)</div></div><figcaption class="media-card__cap">מכשירים</figcaption></figure>
+          <figure class="media-card"><div class="media-card__frame"><span class="media-card__num">02</span><div class="media-card__placeholder">כאן ייכנס סרטון קצר אמיתי מהסטודיו (9:16)</div></div><figcaption class="media-card__cap">מזרן</figcaption></figure>
+          <figure class="media-card"><div class="media-card__frame"><span class="media-card__num">03</span><div class="media-card__placeholder">כאן ייכנס סרטון קצר אמיתי מהסטודיו (9:16)</div></div><figcaption class="media-card__cap">שיעור פרטי</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. הצוות והמלצות: רק אמיתיים, אז כרגע מקום שמור -->
+    <section class="section" aria-labelledby="team-title">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow"><b>06</b> הצוות</p>
+          <h2 class="t-h2 hl" id="team-title">נעים <em>להכיר</em></h2>
+        </div>
+        <div class="people">
           <div data-reveal>
-            <h3>מה קורה בשיעור</h3>
-            <ul class="ticks">
-              <li>מגיעים 10 דקות לפני, להכיר את המקום ואת המכשירים</li>
-              <li>מספרים לצוות על פציעות או רגישויות, כדי להתאים את התרגילים</li>
-              <li>השיעור נמשך כ-50 דקות <small>(לדוגמה)</small></li>
-            </ul>
+            <h3>הצוות</h3>
+            <div class="placeholder"><p>כאן יופיעו היכרות עם הצוות ותמונות שלו.</p></div>
+          </div>
+          <div class="i1" data-reveal>
+            <h3>מה אומרים</h3>
+            <div class="placeholder"><p>כאן יופיעו המלצות אמיתיות של מתאמנים, עם שם ובאישורם.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight" aria-labelledby="team-title">
-      <div class="wrap split">
-        <div class="split-head" data-reveal>
-          <h2 id="team-title">הצוות</h2>
-        </div>
-        <div class="placeholder" data-reveal>
-          <p>כאן יופיעו היכרות עם הצוות ותמונות שלו.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
-      <div class="wrap split">
-        <div class="split-head" data-reveal>
-          <h2 id="faq-title">שאלות נפוצות</h2>
+    <!-- 8. שאלות נפוצות -->
+    <section class="section section--alt" id="faq" aria-labelledby="faq-title">
+      <div class="wrap--narrow">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow"><b>07</b> שאלות</p>
+          <h2 class="t-h2" id="faq-title">שאלות נפוצות</h2>
         </div>
         <div class="faq" data-reveal>
           <details>
@@ -232,20 +295,24 @@
       </div>
     </section>
 
-    <section class="section book" id="book" aria-labelledby="book-title">
-      <div class="wrap split">
-        <div class="split-head" data-reveal>
-          <h2 id="book-title">שיעור ניסיון</h2>
-          <p>הכי מהיר בוואטסאפ. אפשר גם להשאיר פרטים, ונחזור אליך לתאם.</p>
-          <button class="btn btn-wa js-whatsapp" type="button">
+    <!-- 9. סיום: וואטסאפ או טופס קצר -->
+    <section class="section book fx-host" id="book" aria-labelledby="book-title" data-cta-hide>
+      <canvas class="fx-layer fx-calm" data-fx="dust"></canvas>
+      <div class="wrap grid">
+        <div class="col-5 stack" data-reveal>
+          <p class="eyebrow"><b>08</b> מתחילים</p>
+          <h2 class="t-h2 hl" id="book-title">קובעים <em>שיעור ניסיון</em></h2>
+          <p class="t-lead">הכי מהיר בוואטסאפ. אפשר גם להשאיר פרטים, ונחזור אליך לתאם.</p>
+          <button class="btn btn--primary btn--lg js-whatsapp" type="button">
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></svg>
             <span>תיאום בוואטסאפ</span>
           </button>
         </div>
 
-        <div class="book-main">
+        <div class="col-7 i1" data-reveal>
           <!-- אתר דוגמה: הטופס לא נשלח לשום שרת. בלי JavaScript הכפתור נשאר כבוי, כדי שהפרטים לא ייצאו מהדפדפן. -->
-          <form class="form" id="book-form" novalidate data-reveal>
+          <form class="form contact-box" id="book-form" novalidate>
+            <h3>או השאירו פרטים</h3>
             <p class="hp" aria-hidden="true"><label>לא למלא <input name="company" tabindex="-1" autocomplete="off"></label></p>
             <div class="field">
               <label for="slot">איזה שיעור מעניין אותך?</label>
@@ -266,16 +333,13 @@
                 <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" dir="ltr" required>
               </div>
             </div>
-            <div class="field field-check">
-              <input id="consent" name="consent" type="checkbox" required>
-              <label for="consent">אני מסכים/ה שישתמשו בשם ובטלפון רק כדי לחזור אליי לגבי שיעור. <a href="privacy.html">מדיניות הפרטיות</a></label>
-            </div>
+            <label class="check"><input id="consent" name="consent" type="checkbox" required><span>אני מסכים/ה שישתמשו בשם ובטלפון רק כדי לחזור אליי לגבי שיעור. <a href="privacy.html">מדיניות הפרטיות</a></span></label>
             <p class="form-error" id="form-error" role="alert" hidden></p>
-            <button class="btn" type="submit" disabled>שליחה</button>
+            <button class="btn btn--primary" type="submit" disabled>שליחה</button>
             <noscript><p>הטופס באתר הדוגמה עובד רק כש-JavaScript פועל.</p></noscript>
           </form>
 
-          <div class="flow" id="flow" tabindex="-1" hidden>
+          <div class="flow contact-box" id="flow" tabindex="-1" hidden>
             <p class="flow-status" role="status">תודה! זה אתר דוגמה, ולכן הפרטים לא נשלחו לשום מקום.</p>
             <h3>מה היה קורה עכשיו בסטודיו אמיתי</h3>
             <p class="flow-sub">ההודעות האלה נשלחות לבד, בלי שמישהו בצוות צריך לזכור. כאן הן רק הדגמה.</p>
@@ -307,9 +371,9 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap footer-inner">
+    <div class="wrap">
       <div>
-        <p class="brand">ציר<span class="brand-sub">סטודיו לפילאטיס</span></p>
+        <p class="logo">ציר <small>סטודיו לפילאטיס</small></p>
         <p>אזור: השרון</p>
         <p>שעות (לדוגמה): ראשון עד חמישי 07:00 עד 21:00, שישי 08:00 עד 12:00</p>
       </div>
@@ -320,12 +384,16 @@
     </div>
   </footer>
 
+  <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false">עצירת תנועה</button>
+
+  <div class="cta-bar" data-cta-bar>
+    <a class="btn btn--primary btn--block btn--lg" href="#book">לתיאום שיעור ניסיון</a>
+  </div>
+
   <dialog class="dialog" id="wa-dialog" aria-labelledby="wa-title">
     <h2 id="wa-title">כאן נפתח וואטסאפ</h2>
     <p>זה אתר דוגמה. באתר אמיתי, הכפתור הזה פותח שיחת וואטסאפ עם הסטודיו, עם הודעה מוכנה לתיאום שיעור ניסיון.</p>
-    <form method="dialog"><button class="btn" type="submit">הבנתי</button></form>
+    <form method="dialog"><button class="btn btn--primary" type="submit">הבנתי</button></form>
   </dialog>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
