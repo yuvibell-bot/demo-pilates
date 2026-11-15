@@ -19,9 +19,9 @@
   --display-stretch: 100%;
   --font-body: "Assistant", system-ui, sans-serif;
 
-  /* פילאטיס הוא קהל שקט: כותרות קטנות יותר מהפוסטר של המערכת, ומרווח שורות שמתאים לסריפים */
-  --fs-hero: clamp(2.5rem, 7vw, 5.4rem);
-  --fs-h2: clamp(1.9rem, 4.2vw, 3.1rem);
+  /* כותרות גדולות כמו במערכת, עם מרווח שורות שמתאים לסריפים של Suez One */
+  --fs-hero: clamp(3rem, 9.5vw, 7.4rem);
+  --fs-h2: clamp(2.2rem, 5.2vw, 4rem);
   --lh-display: 1.12;
   --lh-head: 1.2;
   --track-display: 0;
@@ -88,9 +88,14 @@ p a, li a, .check a { color: var(--brand-text); }
 @keyframes spine-breathe { 0%, 100% { scale: 0.94; } 50% { scale: 1; } }
 .motion-off .spine .curve, .motion-off .spine .vert circle, .motion-off .spine .breath { animation: none; }
 
+/* ---------- אפקטים בגרסה רגועה ----------
+   על הרקע הבהיר החלקיקים כהים, אז הם שקופים יותר מאשר בערכה הכהה. אבק בפתיח ובסיום, סליל בסצנה (עמוד השדרה). */
+.fx-calm[data-fx="dust"] { opacity: 0.45; }
+.fx-calm[data-fx="helix"] { opacity: 0.55; }
+
 /* ---------- 2. סצנה: שלוש שורות שנדלקות לאט ---------- */
-.scene { --scene-len: 190vh; background: var(--bg-2); }
-.statement { font-family: var(--font-display); font-size: clamp(1.8rem, 5vw, 3.6rem); line-height: 1.3; text-shadow: none; }
+.scene { --scene-len: 220vh; background: var(--bg-2); }
+.statement { font-family: var(--font-display); font-size: clamp(2.2rem, 6.4vw, 4.8rem); line-height: 1.25; text-shadow: 0 2px 24px var(--bg-2); }
 .statement .line + .line { margin-top: 0.2em; }
 
 /* ---------- כותרות סקשן ---------- */
@@ -213,11 +218,3 @@ p a, li a, .check a { color: var(--brand-text); }
 .dialog::backdrop { background: rgb(24 32 28 / 0.45); }
 .dialog h2 { font-size: 1.6rem; }
 .dialog p { color: var(--muted); margin-block: var(--s-3) var(--s-5); }
-
-/* ---------- עמודים פנימיים ---------- */
-.page { padding-block: var(--s-8); }
-.page h1 { font-size: var(--fs-h2); line-height: var(--lh-head); margin-bottom: var(--s-4); }
-.page h2 { font-size: 1.4rem; margin-top: var(--s-6); margin-bottom: var(--s-2); }
-.page p + p { margin-top: var(--s-3); }
-.page ul { padding-inline-start: 22px; }
-.page li { margin-bottom: 6px; }

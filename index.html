@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="site.css">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <script src="webit.js" defer></script>
+  <script src="webit-fx.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -36,7 +37,8 @@
 
   <main id="main">
     <!-- 1. פתיח: מה זה, ופעולה אחת -->
-    <section class="hero intro" id="top" data-cta-hide>
+    <section class="hero intro fx-host" id="top" data-cta-hide>
+      <canvas class="fx-layer fx-calm" data-fx="dust"></canvas>
       <div class="wrap grid">
         <div class="col-7">
           <p class="eyebrow" data-intro><b>01</b> פילאטיס מכשירים ומזרן · השרון</p>
@@ -66,6 +68,7 @@
     <!-- 2. סצנה נעוצה: הגישה של הסטודיו בשלוש שורות -->
     <section class="scene" data-scene aria-label="הגישה של הסטודיו">
       <div class="scene__stage">
+        <canvas class="fx-layer fx-calm" data-fx="helix"></canvas>
         <div class="wrap--narrow">
           <p class="statement hl">
             <span class="line reveal-line n3">מעט <em>אנשים.</em></span>
@@ -293,7 +296,8 @@
     </section>
 
     <!-- 9. סיום: וואטסאפ או טופס קצר -->
-    <section class="section book" id="book" aria-labelledby="book-title" data-cta-hide>
+    <section class="section book fx-host" id="book" aria-labelledby="book-title" data-cta-hide>
+      <canvas class="fx-layer fx-calm" data-fx="dust"></canvas>
       <div class="wrap grid">
         <div class="col-5 stack" data-reveal>
           <p class="eyebrow"><b>08</b> מתחילים</p>

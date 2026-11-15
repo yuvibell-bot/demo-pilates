@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>הצהרת נגישות | ציר – סטודיו לפילאטיס (פרויקט קונספט)</title>
+  <meta name="robots" content="noindex">
   <meta name="description" content="הצהרת הנגישות של אתר הדוגמה ציר – סטודיו לפילאטיס.">
   <link rel="preload" href="fonts/assistant-hebrew-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="webit.css">
@@ -15,37 +16,43 @@
   <header class="site-header">
     <div class="wrap">
       <a class="logo" href="index.html">ציר <small>סטודיו לפילאטיס</small></a>
-      <a class="link-arrow" href="index.html">חזרה לעמוד הבית</a>
+      <div class="header-actions">
+        <a class="header-link" href="accessibility.html" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 8.5l7 1.5 7-1.5M12 10v5m0 0l-3.5 6m3.5-6l3.5 6"/></svg><span>נגישות</span></a>
+        <a class="back-link" href="index.html">חזרה לעמוד הבית</a>
+      </div>
     </div>
   </header>
 
-  <main class="page" id="main">
+  <main id="main" class="legal">
     <div class="wrap--narrow">
+      <p class="concept-note">פרויקט קונספט: אתר דוגמה שבנה יובל. הסטודיו בדוי.</p>
       <h1>הצהרת נגישות</h1>
       <p>זה אתר דוגמה. העמוד מראה איך תיראה הצהרת נגישות באתר אמיתי, ומתאר מה נעשה באתר הזה בפועל.</p>
 
       <h2>מה נעשה באתר</h2>
-      <p>האתר נבנה כך שיתאים לתקן הישראלי 5568 ולהנחיות WCAG 2.0 ברמה AA:</p>
+      <p>האתר נבנה כך שיתאים לתקן הישראלי 5568 ולהנחיות WCAG 2.1 ברמה AA, כנדרש בתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013:</p>
       <ul>
         <li>אפשר לעבור על כל הכפתורים, הקישורים, לוח השיעורים והטופס עם המקלדת בלבד, ויש קישור "דילוג לתוכן".</li>
         <li>בטלפון, ימי הלוח הם לשוניות שעוברים ביניהן גם בחיצים.</li>
-        <li>לכל שדה בטופס יש תווית, והודעות שגיאה מוקראות לקורא מסך.</li>
+        <li>האתר עובד עם קוראי מסך: כותרות מסודרות, תווית לכל שדה בטופס, והודעות שגיאה שמוקראות.</li>
         <li>ניגודיות הצבעים של כל הטקסטים היא לפחות 4.5:1.</li>
         <li>יש כפתור לעצירת התנועה, התנועה כבויה מראש למי שביקש "הפחתת תנועה" במכשיר, והאתר זוכר את הבחירה בכפתור.</li>
-        <li>האתר עובד בטלפון ובמחשב, ואפשר להגדיל את הטקסט בלי שהתוכן ייחתך.</li>
+        <li>האתר עובד בטלפון ובמחשב, ואפשר להגדיל את הטקסט עד 200% בלי שהתוכן ייחתך.</li>
+        <li>האנימציות ברקע דקורטיביות בלבד, וכל התוכן נשאר טקסט רגיל שאפשר לקרוא גם בלי JavaScript.</li>
         <li>אין באתר תוסף נגישות. ההתאמות בנויות בקוד של האתר עצמו.</li>
       </ul>
       <p>תאריך הבדיקה האחרונה: 15 בנובמבר 2026.</p>
 
       <h2>באתר אמיתי</h2>
       <p>באתר של עסק אמיתי, כאן יופיעו שם, טלפון ומייל של האחראי על הנגישות בעסק, כדי שאפשר יהיה לדווח על בעיה ולבקש התאמה, וגם פרטים על נגישות הסטודיו עצמו (חניה, מדרגות, מעלית).</p>
+      <p class="legal__updated">עודכן לאחרונה: 15 בנובמבר 2026</p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p><a href="privacy.html">מדיניות פרטיות</a> · <a href="terms.html">תנאי שימוש</a> · <a href="accessibility.html">הצהרת נגישות</a></p>
-      <p class="concept">פרויקט קונספט מאת יובל. העסק בדוי.</p>
+      <span>ציר – סטודיו לפילאטיס · פרויקט קונספט מאת יובל. העסק בדוי.</span>
+      <nav aria-label="מידע משפטי"><a href="privacy.html">מדיניות פרטיות</a><a href="terms.html">תנאי שימוש</a><a href="accessibility.html">הצהרת נגישות</a></nav>
     </div>
   </footer>
 </body>

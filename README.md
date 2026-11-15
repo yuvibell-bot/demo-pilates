@@ -4,7 +4,7 @@
 
 - `index.html`: דף הנחיתה (שיעורים, לוח שבועי, השיעור הראשון, שאלות, שיעור ניסיון)
 - `privacy.html`, `terms.html`, `accessibility.html`: פרטיות, תנאי שימוש והצהרת נגישות
-- `webit.css`, `webit.js`: מערכת העיצוב של WEBIT, מועתקים כמו שהם מ-`design-system/kit`. **לא עורכים אותם.**
+- `webit.css`, `webit.js`, `webit-fx.js` (אבק בפתיח ובסיום, סליל בסצנה): מערכת העיצוב של WEBIT, מועתקים כמו שהם מ-`design-system/kit`. **לא עורכים אותם.**
 - `site.css`: כל מה שייחודי לציר (צבעי ה-ORS על הערכה הבהירה, Suez One ו-Assistant, לוח השיעורים, הטופס). בודקים צבעים עם `node design-system/kit/check-contrast.js site.css --light`
 - `script.js`: לוח השיעורים, הטופס, הדגמת האוטומציה וחלון הוואטסאפ. `favicon.svg`
 - `fonts/`: Suez One ו-Assistant (רישיון SIL OFL ב-`fonts/OFL.txt`), מאוחסנים באתר. הגופנים של הערכה (Heebo ו-Noto) מועתקים עם הערכה אבל לא בשימוש, ולכן הדפדפן לא מוריד אותם
