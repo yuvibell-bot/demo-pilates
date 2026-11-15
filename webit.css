@@ -500,3 +500,8 @@ html:not(.wm-js) .fx-ribbon { display: none; }
 .header-link:hover { color: var(--brand-text); }
 @media (max-width: 420px) { .header-actions { gap: var(--s-3); } .site-header .btn--primary { padding-inline: var(--s-4); } }
 .legal .concept-note { margin-bottom: var(--s-6); border-radius: var(--r-sm); }
+/* עמוד 404 */
+.nf { min-height: 70svh; display: grid; align-items: center; padding-block: var(--s-9); }
+.nf__code { font: 900 clamp(6rem, 26vw, 14rem)/0.85 var(--font-display); font-stretch: 62.5%; color: transparent;
+  background: linear-gradient(180deg, var(--brand), color-mix(in srgb, var(--brand) 10%, transparent)); -webkit-background-clip: text; background-clip: text; margin-bottom: var(--s-5); }
+.nf .t-lead { margin-top: var(--s-4); }
