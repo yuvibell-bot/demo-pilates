@@ -7,8 +7,8 @@
 /* ---------- 0. גופנים (מאוחסנים באתר, רישיון SIL OFL, בתיקייה fonts/) ----------
    כותרות: Noto Sans Hebrew משתנה עם ציר רוחב, וכך מקבלים כותרת פוסטר צרה וענקית בקובץ אחד.
    טקסט: Heebo משתנה. */
-@font-face { font-family: "WEBIT Poster"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/poster-hebrew.woff2") format("woff2"); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
-@font-face { font-family: "WEBIT Poster"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/poster-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "WEBIT Display"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/display-hebrew.woff2") format("woff2"); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: "WEBIT Display"; font-weight: 100 900; font-stretch: 62.5% 100%; font-display: swap; src: url("fonts/display-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 @font-face { font-family: "Heebo"; font-weight: 100 900; font-display: swap; src: url("fonts/heebo-hebrew.woff2") format("woff2"); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
 @font-face { font-family: "Heebo"; font-weight: 100 900; font-display: swap; src: url("fonts/heebo-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
@@ -18,7 +18,7 @@
   --brand: #c6ff3d;            /* צבע מבטא אחד, חזק. כפתור ראשי, מילת מפתח, הקו */
   --brand-ink: #0b1016;        /* טקסט על גבי צבע המבטא */
   --brand-text: #c6ff3d;       /* המבטא כשהוא טקסט על הרקע: חייב 4.5:1 לפחות */
-  --font-display: "WEBIT Poster", "Heebo", system-ui, sans-serif;
+  --font-display: "WEBIT Display", "Heebo", system-ui, sans-serif;
   --display-stretch: 72%;      /* רוחב הכותרות: 62.5% צר מאוד, 100% רגיל */
   --font-body: "Heebo", system-ui, sans-serif;
 
@@ -445,40 +445,8 @@ html:not(.wm-js) .scene__stage { position: static; height: auto; padding-block: 
 
 .scene__stage > .fx-layer { z-index: 0; }
 .scene__stage > :not(.fx-layer) { position: relative; z-index: 1; }
-.fx-tunnel .scene__stage > .fx-tunnel__head { position: absolute; }
-.fx-tunnel .trio { width: min(100%, 84svh); margin-inline: auto; }
-@media (max-width: 899.98px) { .fx-tunnel .trio { grid-auto-columns: min(74%, 30svh); width: auto; } }
 .statement { text-shadow: 0 2px 18px var(--bg); }
 
-/* מנהרה: הכרטיסים הקדמיים עולים בסוף הסצנה */
-.fx-tunnel .scene__stage { align-content: center; }
-.fx-tunnel__head { position: absolute; top: calc(var(--header-h) + var(--s-6)); inset-inline: 0; text-align: center; z-index: 2; }
-.fx-tunnel__front { --_in: clamp(0, (var(--p) - 0.55) * 3.5, 1); opacity: var(--_in); translate: 0 calc((1 - var(--_in)) * 60px); scale: calc(0.9 + 0.1 * var(--_in)); width: min(100% - 2 * var(--gutter), var(--wrap)); }
-html:not(.wm-js) .fx-tunnel__front, .motion-off .fx-tunnel__front { --_in: 1; }
-html:not(.wm-js) .fx-tunnel .fx-layer, .motion-off .fx-tunnel .fx-layer { opacity: 0.35; }
-html:not(.wm-js) .fx-tunnel__head, .motion-off .fx-tunnel__head { position: static; margin-bottom: var(--s-6); }
-
-/* סרט מתגלגל */
-.fx-ribbon { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-.fx-ribbon__frame {
-  position: absolute; top: 0; left: 0; width: var(--fw, 64px); height: 92px; offset-rotate: auto; offset-distance: 0%;
-  background: #05080c; padding: 14px 3px; box-sizing: border-box; opacity: 0.9;
-}
-@media (max-width: 639.98px) { .fx-ribbon__frame { height: 74px; padding-block: 12px; } }
-.hero:has(.fx-ribbon) { padding-bottom: clamp(150px, 16vw, 190px); }
-.fx-ribbon__frame::before, .fx-ribbon__frame::after { content: ""; position: absolute; inset-inline: 4px; height: 6px;
-  background: repeating-linear-gradient(90deg, color-mix(in srgb, var(--text) 70%, transparent) 0 6px, transparent 6px 12px); }
-.fx-ribbon__frame::before { top: 4px; } .fx-ribbon__frame::after { bottom: 4px; }
-.fx-ribbon__frame > * { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 2px;
-  background: linear-gradient(160deg, var(--surface-2), color-mix(in srgb, var(--brand) 22%, var(--surface))); }
-.fx-ribbon__frame:nth-child(4n+2) > * { background: linear-gradient(200deg, var(--surface), color-mix(in srgb, var(--text) 18%, var(--surface-2))); }
-.fx-ribbon__frame:nth-child(5n) > * { background: color-mix(in srgb, var(--brand) 60%, var(--surface)); }
-html:not(.wm-js) .fx-ribbon { display: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  .fx-tunnel__front { --_in: 1; }
-  .fx-tunnel__head { position: static; margin-bottom: var(--s-6); }
-}
 
 /* ---------- 23. עמודי חובה (נגישות, פרטיות, תנאים) ---------- */
 .legal { padding-block: var(--s-8) var(--s-9); }
